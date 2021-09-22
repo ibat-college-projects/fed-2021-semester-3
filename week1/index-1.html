@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+
+        // alert('Hello World')
+        // let greeting = 'Hello world from a variable';
+        // alert(greeting)
+        //     let day = 'Monday'
+        //     let greeting = `Hello world. It is ${day}`; // string interpolation ${var inside here} ` backtick operator
+        //    // alert(greeting)
+        // console.log(greeting);
+
+        let age = 59;
+
+        //    let mesasge = 'I am ' + age + ' years of age';
+        //    console.log(message);
+
+        console.log(`I am ${age} years of age`)
+
+        //programatically - show how many years I have left before I am a 100
+        //programatically - {years remaining} before  {targetYear}
+        let targetYear = 100;
+        let yearsRemaining = targetYear - age;
+        let message = `I will be ${targetYear} in ${yearsRemaining} years`
+        console.log(message)
+
+        // My dog is 5 human years. How many years in dog years is he given 7 dog years per human year
+
+        let dogYears = 5;
+        let ratio = 7;
+        let myDogYears = dogYears * ratio;
+        message = `My dog is ${myDogYears} dog years`
+        console.log(message)
+
+     // My cat is 6 human years. How many years in cat years is she given 15 cat years per human year
+        let CatYears = 6;
+         ratio = 15;
+        let myCatYears = CatYears * ratio;
+        message = `My cat is ${myCatYears} Cat years`
+        console.log(message)
+
+
+     // How many years in cat years is she given 15 cat years for thier first year, and 4 years per year after
+    
+        let CatFirstYear = 15;
+        let CatOtherYear = 4;
+        let CatCurrentAge = 2;
+        let myCatRealYears = CatFirstYear + ( (CatCurrentAge-1) * CatOtherYear);
+        message = `My cat is ${myCatRealYears} Cat years`
+        console.log(message)
+
+
+
+
+        
+
+    </script>
+
+
+</head>
+
+<body>
+    <h1>Hello World</h1>
+</body>
+
+</html>
