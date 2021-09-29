@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+
+        function WashLaundry(laundryItems) {
+
+            // for (i = 0; i < laundryItems.length; i++) {
+
+            //     console.log(`I am washing the item ${i} which is a ${laundryItems[i]}`);
+            // }
+
+            // for - of 
+            /// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of
+            for (const item of laundryItems) {
+
+                console.log(`I am washing a ${item}`)
+            }
+
+
+        }
+
+        function FindAndWashItem(dirtyLaundry, itemToWash) {
+
+            for (i = 0; i < dirtyLaundry.length; i++) {
+                const currentItem = dirtyLaundry[i];
+
+                if (currentItem.toLowerCase() == itemToWash.toLowerCase()) {
+                    console.log(`Found the ${currentItem} and now washing it`);
+                }
+            }
+
+
+        }
+
+
+        function FindItem(dirtyLaundry, itemToWash) {
+
+            let foundItem = false;
+            for (i = 0; i < dirtyLaundry.length; i++) {
+                const currentItem = dirtyLaundry[i];
+
+                if (currentItem.toLowerCase() == itemToWash.toLowerCase()) {
+                    foundItem = true;
+                    break;
+                }
+            }
+
+            return foundItem;
+
+
+        }
+
+        let laundry = ["shirt", "trousers", "socks", "sweater"];
+
+        let laundryToWash = [];
+
+
+        // let result = FindItem(laundry, "Shirt");
+        // if (result == true) console.log('found');
+        let itemsToFind = ["Shirt", "Sweater", "Trouser"]
+
+        for (const itemToFind of itemsToFind) {
+
+            if (FindItem(laundry, itemToFind)) laundryToWash.push(itemToFind);
+        }
+
+
+        WashLaundry(laundryToWash);
+
+
+
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
