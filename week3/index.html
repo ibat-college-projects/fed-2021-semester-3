@@ -5,9 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="js/shop.js"></script>
+    <script src="js/site1.js"></script>
+    <style>
+        .messagePanel {
+
+            border: solid 1px red;
+            width: 85%;
+            height: 150px;
+            margin-top: 15px;
+            padding: 15px
+        }
+
+
+    </style>
 </head>
-<body>
-    <h1>eShop World</h1>
+<body onload="init()">
+    <h1 id="greeting">?????????????????</h1>
+    <p>The current date is <span id="currentDate">????</span></p>
+    <p><button onclick="ClickButton()">Increase Counter</button> | <button onclick="ResetCounter()">Reset</button></p>
+    <p>
+        <input id="inputDemo" style="width: 400px" 
+        onfocus="ClearEmail()"
+        onblur="ResetEmailField()"
+
+        
+        value="Please add your email to join our newsletter"
+        
+        /></p>
+    
+    <div id="messagePanel" class="messagePanel"></div>
 </body>
 </html>
