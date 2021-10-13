@@ -16,6 +16,12 @@ function init() {
 
 }
 
+function resetCityListing() {
+    const selectedObject = document.querySelector('#selectListOfCities');
+
+    selectedObject.length =0;
+}
+
 function addCity() {
     // Grab the contents of the add city field 
     const selectedInput = document.querySelector("#tbAddCity");
@@ -31,6 +37,15 @@ function addCity() {
     //clear our add city field 
     selectedInput.value = ''
 
+    let cities = [];
+    for(let i = 0; i < selectedObject.options.length; i++ ) {
+        cities.push(selectedObject.options[i].text);
+    }
+
+    const htmlContent = renderCitiesAsHTML(cities);
+
+    renderCityListing(htmlContent)
+
     
 
 
@@ -45,10 +60,7 @@ function onCityChange(e) {
     console.log(`City has changed value to: ${currentValue}`)
     console.log(`City has changed text to: ${currentText}`)
 
-    setSelectedCity(currentText)
-
-
-
+   
 
 
 }
