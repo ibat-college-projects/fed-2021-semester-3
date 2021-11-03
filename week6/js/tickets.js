@@ -10,7 +10,7 @@ let familyPrice = 30;
 
 
 function init() {
-
+console.log("Bruce Wayne - English - 80 - Pass")
     console.log("starting up after load")
     WriteTotal(0)
     WriteAdultCount(0)
@@ -47,7 +47,7 @@ function removeTicket(item) {
     if (item == 'adult') {
 
         adultTicketCount = --adultTicketCount >= 0 ? adultTicketCount : 0;
-      
+
 
         if (adultTicketCount == 0) {
 
@@ -98,5 +98,5 @@ function CalculatePrice() {
 
 
 
-   
+
 }
