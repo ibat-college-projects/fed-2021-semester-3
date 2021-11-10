@@ -19,16 +19,49 @@ function SetupMovieLoader() {
 
         $.getJSON(url, function (jsondata) {
 
-            RenderMovieData(jsondata);
+           // RenderMovieData(jsondata);
+            RenderMovieDataAsTable(jsondata);
         })
 
     })
 }
 
+
+function RenderMovieDataAsTable(movieListing) {
+
+    //console.log(movieListing);
+    htmlString = [];
+ 
+    // start of a list
+    for (const movie of movieListing) {
+        htmlString.push("<tr>")
+       
+        const { title, year, director, id, cast, ...rest } = movie;
+
+        const btnDetails= `<button class="btn btn-success">Details</button>`;
+        htmlString.push(`<td>${title}</td><td>${year}</td><td>${btnDetails}</td>`);
+     
+
+        htmlString.push('</tr>')
+    }
+
+    $('tbody#movieBody').append(htmlString.join(" "));
+   // WriteToMessagePanel(htmlString.join(" "));
+
+}
+
+
+
+
+
+
+
+
+
+
 function RenderMovieData(movieListing) {
 
     //console.log(movieListing);
-
     htmlString = [];
     htmlString.push("<ol>")
     // start of a list
@@ -52,18 +85,11 @@ function RenderMovieData(movieListing) {
         }
         htmlString.push('</ol>')
 
-
         htmlString.push('</li>')
-
     }
 
-
-
     htmlString.push("</ol>")
-
     WriteToMessagePanel(htmlString.join(" "));
-
-
 
 }
 
