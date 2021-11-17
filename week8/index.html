@@ -21,7 +21,24 @@
             padding: 25px;
         }
 
-        .seat {width: 50px; height: 50px; margin: 5px; border: solid 1px red; float: left;}
+        .seat {
+            width: 50px;
+            height: 50px;
+            margin: 5px;
+            border: solid 1px red;
+            float: left;
+        }
+
+        .reserved {
+            background-color: palevioletred;
+        }
+
+        .selected {
+            background-color: green;
+        }
+
+        .clear {clear: left;}
+
     </style>
 </head>
 
@@ -32,44 +49,46 @@
     <div class="container">
         <div class="row">
             <div class="col"> <button class="btn btn-primary" id="btnLoadMovies"> Load Movies</button>
-          
-            <table class="table table-bordered" id="table1">
-                <thead>
-                    <tr>
-                        <th>Movie</th>
-                        <th>Year</th>
-                    </tr>
-                </thead>
-                <tbody id="movieBody"></tbody>
-            </table>
-        </div>
-            
-            <div class="col">
-               <div class="row">
-                <table class="table table-bordered" id="table2">
+
+                <table class="table table-bordered" id="table1">
                     <thead>
                         <tr>
                             <th>Movie</th>
                             <th>Year</th>
-                            <th>Director</th>
                         </tr>
                     </thead>
-                    <tbody id="movieDetailBody"></tbody>
+                    <tbody id="movieBody"></tbody>
                 </table>
             </div>
-            <div class="row" id="seating">
 
-<div class="seat" data-row="1" data-col="1"></div>
-<div class="seat" data-row="1" data-col="2"></div>
-<div class="seat" data-row="1" data-col="3"></div>
-<div class="seat" data-row="1" data-col="4"></div>
+            <div class="col">
+                <div class="row">
+                    <table class="table table-bordered" id="table2">
+                        <thead>
+                            <tr>
+                                <th>Movie</th>
+                                <th>Year</th>
+                                <th>Director</th>
+                            </tr>
+                        </thead>
+                        <tbody id="movieDetailBody"></tbody>
+                    </table>
+                </div>
+                <div class="row" id="seating">
+
+                    <div class="seat reserved" data-row="1" data-col="1"></div>
+                    <div class="seat" data-row="1" data-col="2"></div>
+                    <div class="seat" data-row="1" data-col="3"></div>
+                    <div class="seat" data-row="1" data-col="4"></div>
+<div class="clear"></div>
+                    <div class="seat reserved" data-row="2" data-col="1"></div>
+                    <div class="seat" data-row="2" data-col="2"></div>
+                    <div class="seat" data-row="2" data-col="3"></div>
+                    <div class="seat" data-row="2" data-col="4"></div>
 
 
-
-
-
-            </div>
-            <div class="row"><span id="seatsChosen"></span></div>
+                </div>
+                <div class="row"><span id="seatsChosen"></span></div>
             </div>
         </div>
 </body>
