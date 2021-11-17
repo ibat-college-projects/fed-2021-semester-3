@@ -14,11 +14,19 @@ function initJquery() {
 
 function SetupMovieLoader() {
 
+$('#table1, #table2').hide();
+
+// $('#seating').hide();
+
+
     $('#messagePanel').hide();
+
+
 
     $('#btnLoadMovies').on('click', function () {
 
-        const url = './data/movies.json';
+        // const url = './data/movies.json';
+        const url = 'https://college-movies.herokuapp.com/';
 
         $.getJSON(url, function (jsondata) {
 
@@ -52,6 +60,10 @@ function RenderMovieDataAsTable(movieListing) {
     }
 
     $('tbody#movieBody').append(htmlString.join(" "));
+
+    $('#table1').show();
+
+    $('#btnLoadMovies').hide();
    // WriteToMessagePanel(htmlString.join(" "));
 
 }
@@ -66,13 +78,14 @@ function renderMovieDetail (movieId) {
     const { title, year, director, id, cast, ...rest } = movieDetail;
 
     htmlString.push(`<td>${title}</td><td>${year}</td><td>${director}</td>`);
- 
 
     htmlString.push('</tr>')
-
-
     $('tbody#movieDetailBody').html(htmlString.join(" "));
    console.log(`rendering detail for movie ${movieId}`) 
+
+
+   $('#table2').show();
+   $('#seating').show();
 }
 
 
