@@ -1,4 +1,7 @@
 // https://pastebin.com/raw/gGccfsV3
+
+let movieListings = [];
+
 $(function () {
     initJquery();
 });
@@ -19,12 +22,15 @@ function SetupMovieLoader() {
 
         $.getJSON(url, function (jsondata) {
 
+            movieListings = jsondata;
            // RenderMovieData(jsondata);
             RenderMovieDataAsTable(jsondata);
         })
 
     })
 }
+
+
 
 
 function RenderMovieDataAsTable(movieListing) {
@@ -38,7 +44,7 @@ function RenderMovieDataAsTable(movieListing) {
        
         const { title, year, director, id, cast, ...rest } = movie;
 
-        const btnDetails= `<button class="btn btn-success">Details</button>`;
+        const btnDetails= `<button class="btn btn-success" onclick="renderMovieDetail(${id})">Details</button>`;
         htmlString.push(`<td>${title}</td><td>${year}</td><td>${btnDetails}</td>`);
      
 
@@ -48,6 +54,25 @@ function RenderMovieDataAsTable(movieListing) {
     $('tbody#movieBody').append(htmlString.join(" "));
    // WriteToMessagePanel(htmlString.join(" "));
 
+}
+
+function renderMovieDetail (movieId) {
+
+    const movieDetail = movieListings.find(x=> x.id === movieId);
+    console.log(movieDetail);
+    htmlString = [];
+    htmlString.push("<tr>")
+       
+    const { title, year, director, id, cast, ...rest } = movieDetail;
+
+    htmlString.push(`<td>${title}</td><td>${year}</td><td>${director}</td>`);
+ 
+
+    htmlString.push('</tr>')
+
+
+    $('tbody#movieDetailBody').html(htmlString.join(" "));
+   console.log(`rendering detail for movie ${movieId}`) 
 }
 
 
